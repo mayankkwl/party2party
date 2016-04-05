@@ -40,7 +40,7 @@ module Graph {
         public loadGraph(options: IGraphProperties): void {
             options.charge = options.charge || -30;
             options.linkDistance = options.linkDistance || 150;
-			this.renderAsParent=options;
+			this.renderAsParent=options.onClickHander;
             this.svg = d3.select("#svgCanvas").append("svg");
             this.svg.attr({
                 width: options.Width,
