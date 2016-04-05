@@ -17,17 +17,30 @@ module MainController {
             graphProperties.charge = -120;
             graphProperties.linkDistance = 150;
             graphProperties.chargeDistance = 90;
+            graphProperties.onClickHandler=this.loadData;
             this.personGraph = new Graph.D3Graph("#svgCanvas");
             this.personGraph.loadGraph(graphProperties);
             var _objData = this.data[0];
             _objData=jQuery.extend({},_objData);
-            this.personGraph.updateGraph(_objData);
+            // this.personGraph.updateGraph(_objData);
         }
         public loadData(person) {
-            console.log(person)
-            person=jQuery.extend({},person);
-            console.log(person)
-            this.personGraph.updateGraph(person);
+			var _nodes=this.data.nodes.filter((_n)=>{
+				//Filter nodes with given parent.
+				return _n.parent==person.id || _n.id==person.id;
+			});
+			
+			var _nodeList=_nodes.map((_n)=>{
+				return _n.id
+			});
+			var _links=this.data.nodes.filter((_l)=>{
+				return _nodeList.indexOf(_l.source)!=-1 && _nodeList.indexOf(_l.target)!=-1
+			});
+			
+            this.personGraph.updateGraph({
+				nodes:_nodes,
+				links:_links
+			});
         }
     }
     angular.module("MultiObjectPOC")
