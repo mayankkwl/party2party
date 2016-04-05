@@ -33,13 +33,14 @@ module Graph {
         private seletor: string;
         private force: d3.layout.Force<d3.layout.force.Link<d3.layout.force.Node>, d3.layout.force.Node>
         private svg: d3.Selection<any>;
+		private renderAsParent:Function;
         constructor(selector: string) {
             this.seletor = selector;
         }
         public loadGraph(options: IGraphProperties): void {
             options.charge = options.charge || -30;
             options.linkDistance = options.linkDistance || 150;
-
+			this.renderAsParent=options;
             this.svg = d3.select("#svgCanvas").append("svg");
             this.svg.attr({
                 width: options.Width,
@@ -53,14 +54,9 @@ module Graph {
             if (options.chargeDistance) this.force.chargeDistance(options.chargeDistance);
         }
         public updateGraph(data: IGraphNode): void {
-            data.children.forEach((_child) => {
-                delete _child.children;
-            });
-            
-            data.type = "parent";
-            var _nodes: Array<any> = this.flatten(data);
-            var _links: Array<d3.layout.tree.Link<d3.layout.tree.Node>> = d3.layout.tree().links(_nodes);
-            console.log(_nodes)
+            var _nodes: Array<any> = data.nodes;
+            var _links: Array<d3.layout.tree.Link<d3.layout.tree.Node>> = data.links;
+
             this.force
                 .nodes(_nodes)
                 .links(_links)
@@ -111,7 +107,9 @@ module Graph {
                 .text((d: IGraphNode) => { return d.name; });
 
             _nodeLabel.exit().remove();
-
+			_node.on("click",(d)=>{
+				this.renderAsParent();
+			});
             this.force.on("tick", () => {
                 _link.attr({
                     x1: (d: IGraphLink) => { return d.source.x },
