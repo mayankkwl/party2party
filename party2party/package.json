@@ -1,0 +1,12 @@
+{
+  "name": "property_search",
+  "version": "1.0.0",
+  "description": "Property Search POC",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "dange.laxmikant@gmail.com",
+  "license": "ISC"
+}
