@@ -1,0 +1,47 @@
+.md-overlay{
+	background: rgba(0,0,0,0.6);
+}
+.md-content{
+	background: #fff;
+	position:relative;
+}
+.md-content input[type='text']{
+	color:#000;
+}
+.md-content h3{
+	opacity: 1;
+	background: #108ec8;
+	font-size:36px;
+}
+
+.addpartytogroup{
+	color:#767679;
+	text-align:center;
+	padding:2%;
+}
+
+.addpartytogroup button{
+	display:inline-block;
+	margin:20px;
+}
+
+.md-content .closeBox {
+	position: absolute;
+    top: -10px;
+    right: -10px;
+    display: block;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #767679;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 1px;
+    padding-left: 1px;
+}
+.deleteLayer{
+	z-index:3000;
+	width:40%;
+}

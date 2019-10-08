@@ -1,0 +1,103 @@
+.graphContainer{
+  position: relative;
+  overflow: hidden;
+}
+.graphContainer svg{
+  position: absolute;
+}
+.avatar{
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    /*transform: translate(-50%,-50%);*/
+    border-radius: 100px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.avatar.client{
+  border-color:#8dc63f;
+}
+.avatar.prospect{
+  border-color:#00aeef;
+}
+.avatar.contact{
+  border-color:#e82626;
+}
+
+.detailsWrapper {
+    /* transform: translate(-50%,-50%); */
+    position: absolute;
+    top: -36px;
+    left: -37px;
+}
+
+.userImg{
+    left: 17px;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    border-radius: 25px;
+    background-size: 100%;
+}
+.userName{
+    color: black;
+    position: absolute;
+    top: 46px;
+    left: 10px;
+    width: 55px;
+    text-align: center;
+    font-size: 12px;
+    /* border: 1px solid red; */
+    font-weight: bolder;
+    line-height: .9;
+}
+
+.avImage, .avText, circle {
+  cursor: pointer;
+  /*stroke: #3182bd;
+  stroke-width: 1.5px;*/
+}
+
+.node text {
+  font: 10px sans-serif;
+  pointer-events: none;
+  text-anchor: middle;
+}
+
+.link {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+}
+.link.client{
+  stroke:#8dc63f;
+}
+.link.prospect{
+  stroke:#00aeef;
+}
+.link.contact{
+  stroke:#e82626;
+}
+
+
+@keyframes fadeInSVG{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+svg,.graphContainer{
+  background-color: white;
+	opacity: 0;
+	animation-name: fadeInSVG;
+	animation-duration: 1s;
+	animation-delay: .5s;
+	animation-fill-mode: forwards;
+}
+.avImage{
+	border-radius:25px;
+}

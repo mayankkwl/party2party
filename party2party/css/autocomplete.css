@@ -1,0 +1,38 @@
+.ui-widget-content{
+	background-color:#2b354a;
+	font-family:Open Sans;
+	font-size:12px;
+	width:106px;
+	color:#fff;
+	border:1px solid #334059;
+	border-radius: 0 0 3px 3px;
+	z-index:99999;
+}
+.ui-menu-item:hover{
+	background-color:#171a1f;	
+	border:1px solid #334059;
+}
+
+.ui-menu .ui-menu-item{
+	padding:3px
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    color:#56d4ff;
+	border:0px solid #334059;
+}
+
+  
+a.autoc {
+    color:#fff;
+}
+a.autoc:hover {
+    color:#fff;
+}
+
+#ui-id-2 .ui-state-focus{
+	background-color:#171a1f;
+}
+a.autoc span{
+    font-size:11px;
+	color:#CCC;
+}

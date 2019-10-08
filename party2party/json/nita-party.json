@@ -1,0 +1,85 @@
+{  
+   "nodes":[  
+      {
+         "id":1, 
+         "name":"Nita Smith",
+		 "img": "images/chart-images/50x50/party/nita.png",
+         "group":1,         
+         "x":495,
+         "y":316,
+         "linkDistance":250,
+		 "isParent" : true,
+         "accounts":2,
+         "worth":"5 MM",
+         "isActive":true,
+         "relation":{
+            "name":"Self",
+            "type":"self"
+         }
+      },
+      {
+         "id":2, 
+         "name":"Chris Smith",
+         "img":"images/chart-images/50x50/party/chris.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":300,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Spouse",
+            "type":"client"
+         }
+      },
+      {
+         "id":3, 
+         "name":"James Smith",
+         "img":"images/chart-images/28x28/party/jamess.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Son",
+            "type":"prospect" 
+         }
+      },{
+         "id":4, 
+         "name":"Andrew Smith",
+         "img":"images/chart-images/28x28/party/andrew.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Son",
+            "type":"client" 
+         }
+      }
+   ],
+   "links":[  
+      {
+         "source":0,
+         "target":1,
+         "relation":"client"         
+      },
+      {
+         "source":0,
+         "target":2,
+         "relation":"prospect"         
+      },
+	  {  
+         "source":0,
+         "target":3,
+         "relation":"client"         
+      }
+   ]   
+}

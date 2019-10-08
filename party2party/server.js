@@ -1,7 +1,10 @@
-var express = require('express');
-var app = express();
-app.use(express.static(__dirname+"/build"));
+var express = require("express");
+bodyParser = require("body-parser");
+app = express();
 
-app.listen(80, function () {
-  console.log('Example app listening on port 80!');
+var routes = require("./cms/app/crm");
+app.use(express.static(__dirname));
+console.log(__dirname);
+app.listen(8081, function() {
+  console.log("Example app listening on port 8081!");
 });

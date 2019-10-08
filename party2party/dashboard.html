@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8">
+<title>FA Dashboard</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/lib/datatables.min.css">
+<link rel="stylesheet" href="css/lib/fancySelect.css">
+<link rel="stylesheet" href="css/lib/component.css">
+<link rel="stylesheet" type="text/css" href="css/lib/jquery.mCustomScrollbar.css"/>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/modal.css">
+<link rel="stylesheet" href="css/autocomplete.css">
+<link rel="stylesheet" type="text/css" href="css/d3graph.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/theme.css">
+<script src="js/modernizr.custom.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--<link rel="icon" type="image/png" href="images/favicon.png">-->
+
+</head>
+<body>
+
+<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container dashboard">
+  <header>
+    <div class="row">
+      <div class="logo"><a href="javascript:;">Morgan Stanley</a></div>
+      <div class="nav-links">
+        <ul>
+          <li><a class="button button-primary btn_dashboard" href="#" >Dashboard <i>&nbsp;</i></a></li>
+          <li><i class="groupicon"></i><a class="" href="javascript:;">Add Group</a></li>
+          <li><i class="partyicon"></i><a class="" href="javascript:;">Add Party</a></li>
+        </ul>
+      </div>
+      <div class="userInfo">
+        <ul>
+          <li> <img class="user" src="images/user.png" alt="user" /></li>
+          <li> <a class="dd" href="javascript:;">Adam Smith <i></i></a> <span>Financial Advisor</span>
+				<ul class='ddl'>
+					<li><a href="javascript:;" class="logout">Signout</a></li>
+					<li><a href="javascript:;">Preference</a></li>
+				</ul>
+		  </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="u-cf"></div>
+  <div class="row">
+    <div class="left-pane"> <a class="togglePane" href="javascript:;">toggle</a>
+      <ul class="tabs expand_view">
+        <li data-type="group" class="active">GROUP</li>
+        <li data-type="party">PARTY</li>
+      </ul>
+      <ul class="tabs collapsed_view">
+        <li data-type="group" class="active"><i class="icon_group"></i></li>
+        <li data-type="party"><i class="icon_party"></i></li>
+      </ul>
+      <div class="u-cf"></div>
+      <div class="search expand_view">
+        <form id="basic_search" onsubmit="return false;">
+          <select id="search">
+            <option value="0">All</option>
+            <option value="1">Client</option>
+            <option value="2">Prospect</option>
+            <option value="3">Contact</option>
+          </select>
+          <input type="text" id="txtsearch" value="" />
+          <input type="image" src="images/search.png" alt="Search" />
+        </form>
+        <div class="u-cf"></div>
+      </div>
+      <!--<div class="upslide slide" go="up"><i></i></div>-->
+      <div class="userListp mCustomScrollbar" data-mcs-theme="dark-thin" id="group">
+        <ul class="userList list multiple-items">LOADING...</ul>
+      </div>
+      <div class="userListp mCustomScrollbar" data-mcs-theme="dark-thin" id="parties">
+        <ul class="userList list multiple-items">
+        </ul>
+      </div>
+      <!--<div class="downslide slide" go="down"><i></i></div>-->
+      <div class="advSearch expand_view">
+        <div class="search_btn"> ADVANCE SEARCH <i></i> </div>
+        <div class="searchForm">
+          <div class="row marginTop5">
+            <div class="twelve columns">
+              <input class="u-full-width" type="text" placeholder="Party Name" id="partyName">
+            </div>
+          </div>
+          <div class="row">
+            <div class="twelve columns">
+              <input class="u-full-width" type="text" placeholder="Group Name" id="groupName">
+            </div>
+          </div>
+          <div class="row">
+            <div class="twelve columns" id="adv_partytype">
+              <select class="u-full-width" id="partyType">
+                <option value="1">Party Type</option>
+                <option value="2">Client</option>
+                <option value="3">Prospect</option>
+                <option value="4">Contact</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="u-full-width rangeLable"> Net Value </div>
+            <div class="rangeS">
+              <div class="sliderRange">
+                <div id="slider-range"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row srch">
+            <div class="u-full-width">
+              <button id="advSearch" class="button-primary">SEARCH <i></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-pane">
+      <nav>
+        <div class="viewTitle">Group View</div>
+        <div class="breadcrumb"> <a href="javascript:;" class="active" id="grptitle"></a> </div>
+        <div class="icon-profileDetail isOpen"><i></i> Details</div>
+        <div class="u-cf"></div>
+      </nav>
+      <div class="graphContainer"></div>
+	  <div id="legends">
+          <ul>
+            <li><span class="client"></span>Client</li>
+            <li><span class="prospect"></span>Prospect</li>
+            <li><span class="contact"></span>Contact</li>
+          </ul>
+		  <div class="u-cf"></div>
+        </div>
+	  <div class="listviewparty">
+		<table class="u-full-width listview">
+                <thead>
+                  <tr>
+                    <th>Party Name</th>
+                    <th>Party Type</th>
+                    <th>Members</th>
+                    <th>Net Value</th>
+                    <th>Total Accounts</th>
+					<th>Total Relations</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class='active'>
+                    <td><a href="javascript:;">John Doe</a></td>
+                    <td>Client</td>
+                    <td>Doe Group</td>
+                    <td>8 MM</td>
+                    <td>5</td>
+					<td>5</td>
+                  </tr>
+				  <tr>
+                    <td><a href="javascript:;">Jane Doe</a></td>
+                    <td>Client</td>
+                    <td>Doe Group</td>
+                    <td>3 MM</td>
+                    <td>2</td>
+					<td>2</td>
+                  </tr><tr>
+                    <td><a href="javascript:;">James Doe</a></td>
+                    <td>Prospect</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+					<td>1</td>
+                  </tr><tr>
+                    <td><a href="javascript:;">Shane Doe</a></td>
+                    <td>Prospect</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+					<td>1</td>
+                  </tr><tr>
+                    <td><a href="javascript:;">Alex Sun</a></td>
+                    <td>Prospect</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+					<td>2</td>
+                  </tr><tr>
+                    <td><a href="javascript:;">Joe Dan</a></td>
+                    <td>Contact</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+					<td>1</td>
+                  </tr>
+				</tbody>
+			</table>
+	  </div>
+	  <div class="switchview">
+			<button class="button button-primary" data-type="graph">Graph View</button> <button class="button">Grid View</button>
+	  </div>
+      <div class="partyContainer">
+        <div class="toggelbar rpane">
+          <div class="hc">
+            <div id="nav-icon1"> <span></span> <span></span> <span></span> </div>
+          </div>
+        </div>
+        <div class="feeds rpane">
+          <div class="headercrm"> <i></i><span>CRM ACTIVITY</span>
+            <div class="u-cf"></div>
+          </div>
+		  <h6 style="margin-top:0">NOTES</h6>
+          <div class="notes mCustomScrollbar" data-mcs-theme="minimal-dark">
+		  <ul class="crm">
+            <li>
+              <div class="avt"><span>04/15</span> </div>
+              <div class="cont"><span>John</span> is looking to setup another Trust with aim of Charity</div>
+              <div class="u-cf"></div>
+            </li>
+            <li>
+              <div class="avt"> <span>202/18</span> </div>
+              <div class="cont"><span>John</span> is planning to move fund from his individual account to Retirements fund <span>Retirement fund</span></div>
+              <div class="u-cf"></div>
+            </li>
+           </ul>
+		  </div>
+		  <h6>CALL CYCLES</h6>
+		  <div class="notes mCustomScrollbar" data-mcs-theme="minimal-dark">
+		  <ul class="crm">
+		    <li>
+              <div class="avt"> <i class="phoneicon"></i> <span>04/19</span> </div>
+              <div class="cont">Confirmation on setting up new <span>Trust</span></div>
+              <div class="u-cf"></div>
+            </li>
+            <li>
+              <div class="avt"> <i class="phoneicon"></i> <span>02/17</span> </div>
+              <div class="cont">Meeting confirmation for <span>02/18</span></div>
+              <div class="u-cf"></div>
+            </li>
+           </ul>
+		  </div>
+		  <h6>Facebook</h6>
+		  <ul>
+			<li>
+				<div class="avt"><span>04/15</span></div> 
+				<div class="cont">John Doe is friends with Tracy</div>
+				<div class="u-cf"></div>
+			</li>
+			<li>
+				<div class="avt"><span>03/17</span> </div>
+				<div class="cont"> John Doe likes Star Wars III</div>
+				<div class="u-cf"></div>
+			</li>
+		  </ul>
+		  <h6>Twitter</h6>
+		  <ul>
+			<li>
+				<div class="avt"><span>03/18</span> </div>
+				<div class="cont"> John Doe is following Donald Trump</div>
+				<div class="u-cf"></div>
+			</li>
+			
+		  </ul>
+          <!--
+		  <button>View All</button>
+		  -->
+		  <!--
+          <div class="headernews"> 
+			<i class="news"></i><span>CALL CYCLES</span>
+            <div class="u-cf"></div>
+          </div>
+		  <div class="u-cf"></div>
+          <ul>
+            <li>
+              <div class="avt">
+                <div class="box num"><span>01</span></div>
+              </div>
+              <div class="cont"> <span>04/19</span>
+                <p>Confirmation on setting up new <span>Trust</span></p>
+              </div>
+              <div class="u-cf"></div>
+            </li>
+            <li>
+              <div class="avt">
+                <div class="box num"> <span>02</span> </div>
+              </div>
+              <div class="cont">
+                <div class="cont"> <span>02/17</span>
+                  <p>Meeting confirmation for 02/18</p>
+                </div>
+              </div>
+              <div class="u-cf"></div>
+            </li>
+          </ul>
+		  -->
+        </div>
+        <div class="userDetailParty rpane"> <i class="topArrow"></i>
+          <div class="userinfo1">
+            <div class="mainAvtar"> <img id="p_img" src="images/userimage.png" alt="" /> </div>
+            <div class="userinfodetail">
+              <div class="actions">
+                <div> <span class="name" id="p_name">xxx</span> <span class="desc" id="p_designation">Primary Account Holder</span> </div>
+                <div> <a class="edit" href="javascript:;"><i></i></a> <a class="delete" href="javascript:;"><i></i></a> </div>
+                <div class="u-cf"></div>
+              </div>
+              <div class="address">
+                <ul>
+                  <li> <i class="locationicon"></i> <span id="p_address">1018 Bradshaw Avenue <br/>
+                    Columbia,  MO 65203 </span></li>
+                  <li><i class="phoneicon"></i><span id="p_tel">1-876-328-685</span></li>
+                </ul>
+                <ul>
+                  <li><span class="pullleft">Tax ID</span><span class="pullright" id="p_taxid">9890420</span></li>
+                  <li><span class="pullleft">Client Type</span><span class="pullright" id="p_clientType">Client</span></li>
+                  <li><span class="pullleft">RM</span><span class="pullright" id="p_rm">James Ames</span></li>
+                </ul>
+                <div class="u-cf"></div>
+              </div>
+            </div>
+            <div class="u-cf"></div>
+          </div>
+          <div class="userinfo2">
+            <ul>
+              <li> <i class="worth"></i> <span id="p_netVal">8 MM</span> New Value </li>
+              <li> <i class="accounts"></i> <span id="p_totalAccounts">5</span> Accounts </li>
+              <li> <i class="relation"></i> <span id="totalRetions">5</span> Total Relations </li>
+            </ul>
+            <div class="u-cf"></div>
+			<button class="md-trigger" data-modal="modal-3"><i></i>Manage Relations</button><br />
+          </div>
+          <div class="userinfo3">
+            <div class="tblHead"> <span class="accountTitle">Accounts</span>
+			  <input type="search" id="grpAccountTextField" placeholder="Filter">
+              <button><i></i>Add Account</button>
+              <div class="u-cf"></div>
+            </div>
+			<table class="u-full-width" id="tblpartydetail">
+              <thead>
+                <tr>
+                  <th>Account No</th>
+                  <th>Account Type</th>
+                  <th>Beneficiary</th>
+                  <th>Net Value</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="userDetailGroup rpane"> <i class="topArrow"></i>
+          <div class="userinfo1">
+            <div class="mainAvtar">
+				<svg height="100" width="100" style="background-color:#f2f2f2">
+				  <circle cx="50" cy="50" r="40" stroke="#222b3d" stroke-width="2" fill="white" />
+				  <text x="30" y="58" fill="#222b3d" style="font-size:30px;">MC</text>
+				</svg>
+            </div>
+            <div class="userinfodetail">
+              <div class="actions">
+                <div> <span class="name">MSO ID - Corps</span> </div>
+                <div> <a class="edit" href="javascript:;"><i></i></a> <a class="delete" href="javascript:;"><i></i></a> </div>
+                <div class="u-cf"></div>
+              </div>
+              <div class="address">
+                <ul>
+                  <li> <i class="locationicon"></i> 343 Beach Street,<br />
+                    Jersey City, NJ 07307</li>
+                  <li><i class="phoneicon"></i> <a class="tele" href="tel:+1876328685">876-328-685</a></li>
+                </ul>
+                <div class="u-cf"></div>
+              </div>
+            </div>
+            <div class="u-cf"></div>
+          </div>
+          <div class="userinfo2">
+            <ul>
+              <li> <i class="worth"></i> <span id="groupworth">90 MM</span> New Value </li>
+              <li> <i class="accounts"></i> <span id="groupaccount">8</span> Total Accounts </li>
+              <li> <i class="relation"></i> <span id="groupparties">8</span> Total Parties </li>
+            </ul>
+            <div class="u-cf"></div>
+          </div>
+          <div class="userinfo3">
+            <div class="tblHead"> <span class="accountTitle">Parties</span>
+			  <input type="search" id="grpPartiesTextField" placeholder="Filter">
+			  <button class="md-trigger" data-modal="modal-1" id="addPartyGrp"><i></i>Add Party</button>
+              <div class="u-cf"></div>
+            </div>
+            <div class="grptable mCustomScrollbar light" data-mcs-theme="minimal-dark">
+              <table class="u-full-width" id="grpParties">
+                <thead>
+                  <tr>
+                    <th>Party Name</th>
+                    <th>Party Type</th>
+                    <th>Roll Up</th>
+                    <th>Net Value</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="javascript:;">Chris Smith</a></td>
+                    <td>Client</td>
+                    <td><input class="checkbox" checked type="checkbox" value="80" data-account="4"></td>
+                    <td>80MM</td>
+                    <td><a class="edit" href="javascript:;"><i></i></a> <a data-worth="80" class="delete" href="javascript:;"><i></i></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="javascript:;" class="grpparties" data-index="9">Nita Smith</a></td>
+                    <td>Client</td>
+                    <td><input class="checkbox" checked type="checkbox" value="5" data-account="2"></td>
+                    <td>5MM</td>
+                    <td><a class="edit" href="javascript:;"><i></i></a> <a data-worth="5" class="delete" href="javascript:;"><i></i></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="javascript:;">Andrew Smith</a></td>
+                    <td>Client</td>
+                    <td><input class="checkbox" checked type="checkbox" value="5" data-account="2"></td>
+                    <td>5MM</td>
+                    <td><a class="edit" href="javascript:;"><i></i></a> <a data-worth="5" class="delete" href="javascript:;"><i></i></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="javascript:;">Isha Smith</a></td>
+                    <td>Prospect</td>
+                    <td></td>
+                    <td></td>
+                    <td><a class="edit" href="javascript:;"><i></i></a> <a class="delete" href="javascript:;"><i></i></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="javascript:;">James Smith</a></td>
+                    <td>Prospect</td>
+                    <td></td>
+                    <td></td>
+                    <td><a class="edit" href="javascript:;"><i></i></a> <a class="delete" href="javascript:;"><i></i></a></td>
+                  </tr>
+                  <tr class="nonefamilier">
+                    <td><a href="javascript:;">Alex Sun</a></td>
+                    <td>Prospect</td>
+                    <td></td>
+                    <td></td>
+                    <td><a class="edit" href="javascript:;"><i></i></a> <a class="delete" href="javascript:;"><i></i></a></td>
+                  </tr>
+                  <tr class="nonefamilier">
+                    <td><a href="javascript:;">Dan Smith</a></td>
+                    <td>Contact</td>
+                    <td></td>
+                    <td></td>
+                    <td><a class="edit" href="javascript:;"><i></i></a> <a class="delete" href="javascript:;"><i></i></a></td>
+                  </tr>
+                  <tr class="nonefamilier">
+                    <td><a href="javascript:;">Paul Buckler</a></td>
+                    <td>Contact</td>
+                    <td></td>
+                    <td></td>
+                    <td><a class="edit" href="javascript:;"><i></i></a> <a class="delete" href="javascript:;"><i></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="u-cf"></div>
+      </div>
+    </div>
+  </div>
+  <!--
+	Modal Box Add Party Overlay
+	-->
+
+<div class="md-modal md-effect-14" id="modal-1">
+	<div class="md-content">
+		<a href="javascript:;" class="closeBox md-close" title="close">X</a>
+		<h3>Add Party</h3>
+		<div id="addpartylayer">			
+			<h6 class="error">&nbsp;</h6>
+			<form autocomplete="false" onsubmit="return false;">
+			  <div class="row">
+				<div class="nine columns">
+				  <input class="u-full-width" type="text" placeholder="Party Name" id="faparty" autocomplete="false">
+				</div>
+				<div class="three columns"> <a class="button button-primary" id="addnewpartytogroup" href="newclient.html">Add New</a> </div>
+			  </div>
+			  <div class="row addpartytogroup">
+				<div class="twelve columns">
+				  <input class="button-primary" id="existingpartytogroup" type="submit" value="Add To Group">
+				</div>
+			  </div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Box Delete  Party overlay -->
+<div class="md-modal md-effect-14" id="modal-2">
+	<div class="md-content">
+		<h3>Disassociate Party</h3>
+		<div>			
+			<div class="row addpartytogroup">
+			<a href="javascript:;" class="closeBox md-close" title="close">X</a>
+			  <div class="twelve columns"> Are you sure you want to disassociate <span id="deletepname">Jason Ericson</span> from MSO ID - Corps? </div>
+			</div>
+			<div class="row">
+			  <div class="twelve columns addpartytogroup">
+				<input class="button-primary" id="deletingingpartytogroup" type="submit" value="Disassociate">
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--
+	Modal Box Add Party Overlay
+	-->
+
+<div class="md-modal md-effect-14" id="modal-3">
+	<div class="md-content manageRlation">
+		<a href="javascript:;" class="closeBox md-close" title="close">X</a>
+		<h3>Manage Relation</h3>
+		<div>			
+			<h6 class="error">&nbsp;</h6>
+			<form autocomplete="false" onsubmit="return false;">
+			  <div class="row">
+				<div class="six columns">
+				<label for="farelation">Party Name</label>
+				  <input class="u-full-width" type="text" placeholder="Party Name" id="farelation" autocomplete="false">
+				</div>
+				<div class="six columns">
+				  <label for="relation">Relation Type</label>
+				  <select class="u-full-width" id="relation">
+					<option value=""></option>
+					<option value="lawyer">Brother</option>
+					<option value="lawyer">Business Associate</option>
+					<option value="cpa">CPA</option>
+					<option value="daughter">Daughter</option>
+					<option value="lawyer">Father</option>
+					<option value="lawyer">Father in law</option>
+					<option value="lawyer">Lawyer</option>
+					<option value="lawyer">Mother</option>
+					<option value="lawyer">Mother in law</option>
+					<option value="lawyer">Sister</option>
+					<option value="son">Son</option>
+					<option value="wife">Spouse</option>
+					<option value="trustee">Trustee</option>
+				  </select>
+				</div>
+			  </div>
+			  <div class="row relations">
+				<div class="twelve columns center">
+				  <input class="button-primary" id="relations" type="submit" value="Add Relation">
+				</div>
+			  </div>
+			</form>
+			<h4>John Doe's Relations</h4>
+			<div class="relationtable mCustomScrollbar" data-mcs-theme="minimal-thin">
+				<table class="u-full-width">
+				  <thead>
+					<tr>
+					  <th>Party</th>
+					  <th>Relation Type</th>
+					  <th></th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>Alex Sun</td>
+					  <td>Son</td>
+					  <td><a class="delete" href="javascript:;"><i></i></a></td>
+					</tr>
+					<tr>
+					  <td>Shane Doe</td>
+					  <td>Daughter</td>
+					  <td><a class="delete" href="javascript:;"><i></i></a></td>
+					</tr>
+					<tr>
+					  <td>James Doe</td>
+					  <td>Son</td>
+					  <td><a class="delete" href="javascript:;"><i></i></a></td>
+					</tr>
+					<tr>
+					  <td>Dan Joe</td>
+					  <td>Trustee</td>
+					  <td><a class="delete" href="javascript:;"><i></i></a></td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<button class="md-trigger" id="deletepartylayer" data-modal="modal-2" style="display:none;">REMOVE</button>
+<div class="md-overlay"></div>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/lib/datatables.min.js"></script> 
+<script src="js/lib/d3js/d3.js"></script> 
+<script src="js/lib/jquery-ui.js"></script> 
+<script src="js/lib/fancySelect.js"></script> 
+<script src="js/lib/classie.js"></script> 
+<script src="js/lib/modalEffects.js"></script>
+<script type="text/javascript" src="js/lib/jquery.mCustomScrollbar.concat.min.js"></script> 
+<script src="js/fa.js"></script> 
+<script src="js/autocomplete.js"></script> 
+<script src="js/d3graph.js"></script> 
+<script>
+(function(){
+	sessionStorage.setItem("tab", "list0");
+})();
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

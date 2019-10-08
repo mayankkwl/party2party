@@ -1,0 +1,35 @@
+{
+    "img": "janedoe.png",
+    "name": "Jane Doe",
+    "designation": "Primary Account Holder",
+    "address": "1018 Bradshaw Avenue Columbia, MO 65203",
+    "tel": "1-876-328-6851",
+    "taxid": "3245648221",
+    "clientType": "Client",
+    "rm": "Jason Ames",
+    "netVal": "3 MM",
+    "totalAccounts": "2",
+    "totalRetions": "2",
+    "account": [
+        {
+            "a_no": "101-439072",
+            "a_type": "Retirement",
+            "beneficiary": "Shane Doe, James Doe",
+            "beneficiaryDialouge": [
+                "Shane Doe",
+                "James Doe"
+            ],
+            "netval": "2MM"
+        },
+        {
+            "a_no": "101-575987",
+            "a_type": "Joint",
+            "beneficiary": "Jane Doe, John Doe",
+            "beneficiaryDialouge": [
+                "Jane Doe",
+                "John Doe"
+            ],
+            "netval": "1MM"
+        }
+    ]
+}

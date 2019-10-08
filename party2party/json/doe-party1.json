@@ -1,0 +1,122 @@
+{  
+   "view":"party",
+   "nodes":[
+      {
+         "id":1, 
+         "name":"John Doe",
+         "img":"images/chart-images/65x65/john.png",
+         "group":1,         
+         "x":495,
+         "y":316,
+         "linkDistance":250,
+         "accounts":5,
+         "worth":"8 MM",
+         "isActive":true,
+         "hasChild":true,
+         "relation":{
+            "name":"Self",
+            "type":"self"
+         }
+      },
+      {
+         "id":2, 
+         "name":"Jane Doe",
+         "img":"images/chart-images/65x65/jane.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":300,
+         "accounts":2,
+         "worth":"3 MM",
+         "isActive":false,
+		 "hasChild" : 0,
+         "relation":{
+            "name":"Spouse",
+            "type":"client"
+         },
+		  "nodes": [
+			{
+			 "name":"John Doe",
+			 "img":"images/chart-images/65x65/chris.png",
+			 "group":1,         
+			 "x":0,
+			 "y":0,
+			 "linkDistance":250,
+			 "accounts":4,
+			 "worth":"8 MM",
+			 "isActive":true,
+			 "relation":{
+				"name":"Spouse",
+				"type":"contact"
+			 }
+			}
+		 ]
+      },
+      {
+         "id":3, 
+         "name":"James Doe",
+         "img":"images/chart-images/28x28/party/jamess.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Son",
+            "type":"prospect" 
+         }
+      },
+      {
+         "id":4, 
+         "name":"Shane Doe",
+         "img":"images/chart-images/28x28/party/shane.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Daughter",
+            "type":"prospect"
+         }
+      }   
+   ],
+   "links":[  
+      {  
+         "source":0,
+         "target":1,
+         "relation":"client"         
+      },
+      {  
+         "source":0,
+         "target":2,
+         "relation":"prospect"         
+      },
+	  {  
+         "source":0,
+         "target":3,
+         "relation":"prospect"         
+      }
+   ],
+   "janeNode":[{
+         "id":10, 
+         "name":"Jack Lee",
+         "img":"images/chart-images/28x28/party/paul.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Lawyer",
+            "type":"contact"
+         }
+      }
+   ]
+}

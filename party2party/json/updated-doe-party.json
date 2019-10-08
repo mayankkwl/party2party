@@ -1,0 +1,258 @@
+{  
+   "view":"party",
+   "nodes":[  
+      {
+         "id":1, 
+         "name":"John Doe",
+         "img":"images/chart-images/65x65/john.png",
+         "group":1,
+         "x":495,
+         "y":316,
+         "linkDistance":250,
+		 "isParent" : true,
+         "accounts":5,
+         "worth":"8 MM",
+         "isActive":true,
+         "hasChild":true,
+		 "details" : "john_doe.json",
+         "relation":{
+            "name":"Self",
+            "type":"self"
+         }
+      },
+      {
+         "id":2, 
+         "name":"Jane Doe",
+         "img":"images/chart-images/65x65/jane.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":300,
+         "accounts":2,
+         "worth":"3 MM",
+         "isActive":false,
+		 "hasChild" : 4,
+		 "details" : "jane_doe.json",
+         "relation":{
+            "name":"Spouse",
+            "type":"client"
+         },
+		  "nodes": [
+			{
+			 "name":"John Doe",
+			 "img":"images/chart-images/65x65/chris.png",
+			 "group":1,         
+			 "x":0,
+			 "y":0,
+			 "linkDistance":250,
+			 "accounts":4,
+			 "worth":"8 MM",
+			 "isActive":true,
+			 "relation":{
+				"name":"Spouse",
+				"type":"contact"
+			 }
+			}
+		 ]
+      },
+      {
+         "id":3, 
+         "name":"James Doe",
+         "img":"images/chart-images/28x28/party/jamess.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Son",
+            "type":"prospect" 
+         }
+      },
+      {
+         "id":4, 
+         "name":"Shane Doe",
+         "img":"images/chart-images/28x28/party/shane.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Daughter",
+            "type":"prospect"
+         }
+      },
+      {
+         "id":5, 
+         "name":"Alex Sun",
+         "img":"images/chart-images/28x28/party/alex.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Lawyer",
+            "type":"prospect"
+         }
+      },
+      {
+         "id":6, 
+         "name":"Joe Dan",
+         "img":"images/chart-images/65x65/joe.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":280,
+         "accounts":0,
+         "worth":"",
+         "isActive":false,
+         "hasChild":1,
+         "relation":{
+            "name":"Trustee",
+            "type":"contact"
+         }
+      },
+	  {
+         "id":7, 
+         "name":"Paul Buckler",
+         "img":"images/chart-images/28x28/party/paul.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":280,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Lawyer",
+            "type":"contact"
+         }
+      }
+
+   ],
+   "links":[  
+      {  
+         "source":0,
+         "target":1,
+         "relation":"client"         
+      },
+      {  
+         "source":0,
+         "target":2,
+         "relation":"prospect"         
+      },
+	  {  
+         "source":0,
+         "target":3,
+         "relation":"prospect"         
+      },
+	  {  
+         "source":0,
+         "target":4,
+         "relation":"prospect"         
+      },
+	  {
+         "source":0,
+         "target":5,
+         "relation":"contact"         
+      },
+	  {
+         "source":0,
+         "target":6,
+         "relation":"contact"         
+      }
+   ],
+   "janeNode":[{
+         "id":10,
+         "name":"Jack Lee",
+         "img":"images/chart-images/50x50/party/jacklee.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+		 "hasParent":true,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Lawyer",
+            "type":"contact"
+         }
+      },
+	  {
+         "id":11, 
+         "name":"John Snow",
+         "img":"images/chart-images/50x50/party/johnsnow.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+		 "hasParent":true,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"CPA",
+            "type":"contact"
+         }
+      },{
+         "id":12, 
+         "name":"Arya Stark",
+         "img":"images/chart-images/50x50/party/aryastark.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+		 "hasParent":true,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Trustee",
+            "type":"prospect"
+         }
+      },{
+         "id":14, 
+         "name":"Ygritte Grace",
+         "img":"images/chart-images/50x50/party/ygritte.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+		 "hasParent":true,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Sister",
+            "type":"prospect"
+         }
+      }
+   ],
+   "danNode":[{
+         "id":15, 
+         "name":"Dan Lee",
+         "img":"images/chart-images/28x28/party/jack.png",
+         "group":1,         
+         "x":0,
+         "y":0,
+         "linkDistance":250,
+		 "hasParent":true,
+         "accounts":8,
+         "worth":"20 MM",
+         "isActive":false,
+         "relation":{
+            "name":"Lawyer",
+            "type":"prospect"
+         }
+      }
+   ]
+}

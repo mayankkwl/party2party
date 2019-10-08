@@ -1,0 +1,42 @@
+{
+	"name": "Parent",
+	"size": 70000,
+	"children": [{
+		"name": "child 1",
+		"size": 30000
+	}, {
+		"name": "child 2",
+		"size": 30000
+	}, {
+		"name": "child 3",
+		"size": 30000
+	}, {
+		"name": "Parent-Child 2",
+		"size": 30000,
+		"children": [{
+			"name": "Child 1",
+			"size": 10000
+		},{
+			"name": "Child 2",
+			"size": 10000
+		},{
+			"name": "Child 3",
+			"size": 10000
+		},{
+			"name": "Child 4",
+			"size": 10000
+		},{
+			"name": "Child 5",
+			"size": 10000
+		}]
+	}, {
+		"name": "child 5",
+		"size": 30000
+	}, {
+		"name": "child 6",
+		"size": 30000
+	}, {
+		"name": "child 7",
+		"size": 30000
+	}]
+}

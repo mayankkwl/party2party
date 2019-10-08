@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8">
+<title>FA Dashboard</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/inputs.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/newclient.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/togglebutton.css">
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--<link rel="icon" type="image/png" href="images/favicon.png">-->
+
+</head>
+
+<body>
+
+<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container dashboard">
+  <header>
+    <div class="row">
+      <div class="logo"><a href="javascript:;">Morgan Stanley</a></div>
+      <div class="nav-links">
+        <ul>
+          <li><a class="button button-primary btn_dashboard" href="dashboard.html">Dashboard <i>&nbsp;</i></a></li>
+          <li><i class="groupicon"></i><a class="" href="javascript:;">Add Group</a></li>
+          <li><i class="partyicon"></i><a class="" href="javascript:;">Add Party</a></li>
+        </ul>
+      </div>
+      <div class="userInfo">
+        <ul>
+          <li> <img class="user" src="images/user.png" alt="user" /></li>
+          <li> <a class="dd" href="javascript:;">Adam Smith <i></i></a> <span>Financial Advisor</span>
+            <ul class='ddl'>
+              <li><a href="javascript:;" class="logout">Signout</a></li>
+              <li><a href="javascript:;">Preference</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="u-cf"></div>
+  <div class="newclient">
+    <div class="row">
+      <div class="twelve columns">
+        <h2 class="subheader">Add Party</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <div id="accordion" style="visibility:hidden;">
+          <h3>Personal Info</h3>
+          <div>
+            <form id="frm01_pinfo" onsubmit="return false;">
+              <div class="container-full-width">
+                <div class="row">
+                  <div class="twelve columns"> 
+                    <!-- <h5>Add Client</h5> --> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <section>
+                      <label for="prefixInput">Prefix</label>
+                      <select id="prefixInput">
+                        <!-- <option value="" disabled >Prefix</option> -->
+                        <option value="Ms">Ms</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Mrs" selected>Mrs</option>
+                        <option value="Mr">Mr</option>
+                        <option value="Master">Master</option>
+                      </select>
+                    </section>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="fnameinput" value="Sandra"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">First Name</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="mnameinput"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Middle Name</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="lnameinput" value="Smith"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Last Name</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <section>
+                      <label for="suffixInput">Suffix</label>
+                      <select class="" id="suffixInput">
+                        <!-- <option value="" disabled selected>Suffix</option> -->
+                        <option value="Jr">Jr</option>
+                        <option value="Sr">Sr</option>
+                      </select>
+                    </section>
+                  </div>
+                </div>
+                <hr class="sephr">
+                <div class="row">
+                  <div class="four columns">
+                    <fieldset id="radio">
+                      <label for="">Gender</label>
+                      <input type="radio" id="male" name="radio">
+                      <label for="male"><i></i>Male</label>
+                      <input type="radio" id="female" name="radio" checked>
+                      <label for="female"><i></i>Female</label>
+                    </fieldset>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="input-1" value="04/01/1960"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Date of Birth</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" value="32346892" id="taxidInput"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Tax ID</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <!--
+							<hr class="sephr">
+							<div class="row">
+							  <div class="twelve columns"> <a class="button button-primary u-pull-right tablink next" data-index="1" href="javascript:;">Contact Info</a> </div>
+							</div>
+							--> 
+              </div>
+              <!-- end fcontainer -->
+            </form>
+          </div>
+          <h3>Contact Info</h3>
+          <div>
+            <div id="frm01_cinfo">
+              <div class="container-full-width">
+                <div class="row">
+                  <div class="twelve columns"> <span class="u-pull-left addtitle">Legal Address</span> <a href="#" class="button locateAddress u-pull-right">Locate Address</a></div>
+                </div>
+                <hr class="sephr">
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="str1Input" value="1018 Bradshaw Avenue"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Street 1</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="str2Input"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Street 2</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="cityInput" value="Columbia"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">City</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="stateInput" value="MD"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">State</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="zipInput" value="65203"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Zip</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="countryInput" value="US"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Country</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <hr class="sephr">
+                <div class="row">
+                  <div class="twelve columns"> <span class="u-pull-left addtitle">Mailing Address</span> <a href="#" class="button locateAddress u-pull-right">Locate Address</a>
+                    <fieldset class="u-pull-right">
+                      <label for="sameaslglCheckbox">
+                        <input type="checkbox" id="sameaslglCheckbox" value="isSameaddress" />
+                        <span>Same as Legal Address&nbsp;&nbsp;&nbsp;&nbsp;</span> </label>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki re" type="text" id="mstr1Input"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Street 1</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki re" type="text" id="mstr2Input"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Street 2</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki re" type="text" id="mcityInput"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">City</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki re" type="text" id="mstateInput"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">State</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki re" type="text" id="mzipInput"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Zip</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki re" type="text" id="mcountryInput"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Country</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <hr class="sephr">
+                <div class="row">
+                  <div class="twelve columns"> <span class="u-pull-left addtitle">Contact Details</span> </div>
+                </div>
+                <hr class="sephr">
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="wphoneInput" value="+1-876-328-6853"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Work Phone</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="hphoneInput" value="+1-876-328-6853"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Home Phone</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="mphoneInput" value="+1-876-328-6853"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Mobile Phone</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="faxInput" value="+1-876-328-6853"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Fax</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="emailInput" value="sandrasmith@gmail.com"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Email</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <hr class="sephr">
+                <div class="row">
+                  <div class="twelve columns"> <span class="u-pull-left addtitle">Executive Assistant</span> </div>
+                </div>
+                <hr class="sephr">
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="eafnameInput" value="Mark"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">First Name</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="eamnameInput"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Middle Name</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="ealnameInput" value="Thompson"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Last Name</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="eaphnInput" value="+1-234-123-1236"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Phone</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="eaemailInput" value="sandrasmith@gmail.com"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Email</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <!--
+				<hr class="sephr">
+				<div class="row">
+                  <div class="twelve columns"> <a class="button button-primary u-pull-left tablink left prev" data-index="0" href="javascript:;">Personal Info</a> <a class="button button-primary u-pull-right tablink next" data-index="2" href="javascript:;">Professional Info</a> </div>
+                </div>
+                --> 
+              </div>
+              <!-- end fcontainer --> 
+            </div>
+          </div>
+          <h3>Professional Info</h3>
+          <div>
+            <div id="frm03_prinfo">
+              <div class="container-full-width">
+                <div class="row">
+                  <div class="four columns empstatus">
+                    <section>
+                      <label for="empInput">Employment Status</label>
+                      <select id="empInput">
+                        <option value="" disabled selected>Employment Status</option>
+                        <option value="Employed">Employed</option>
+                        <option value="Not Employed">Not Employed</option>
+                        <option value="Retired">Retired</option>
+                        <option value="Student">Student</option>
+                        <option value="Self Employed">Self Employed</option>
+                      </select>
+                    </section>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="nobInput" value="Healthcare"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Nature of Business</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="occuInput" value="Doctor"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Occupation</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="edtInput" value="1998"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Employed Since</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="ttlInput" value="Chairman – Department of Neurology"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Title</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="emplnameInput" value="ABC Healthcare LLC"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Employer Name</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <hr class="sephr">
+                <div class="row">
+                  <div class="twelve columns"> <span class="u-pull-left addtitle">Employer Address</span> <a href="#" class="button locateAddress u-pull-right">Locate Address</a> </div>
+                </div>
+                <hr class="sephr">
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="emplstr1Input" value="899 Madison Avenue"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Street 1</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="emplstr2Input"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Street 2</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="emplcityInput" value="Columbia"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">City</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="emplstateInput" value="MD"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">State</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="emplzipInput" value="65203"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Zip</span> </label>
+                    </div>
+                  </div>
+                  <div class="four columns">
+                    <div class="input input--haruki">
+                      <input class="input__field input__field--haruki" type="text" id="emplcountryInput" value="US"/>
+                      <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Country</span> </label>
+                    </div>
+                  </div>
+                </div>
+                <!--
+                <hr class="sephr">
+                <div class="row">
+                  <div class="twelve columns"> <a class="button button-primary u-pull-left tablink left prev" data-index="1" href="javascript:;">Contact Info</a> <a class="button button-primary u-pull-right tablink next" data-index="3" href="javascript:;">Financial Info</a> </div>
+                </div>
+				--> 
+              </div>
+              <!-- end fcontainer --> 
+            </div>
+          </div>
+          <h3>Financial Info</h3>
+          <div>
+            <div id="frm04_cinfo">
+              <div class="container-full-width">
+                <div class="row">
+                  <div class="twelve columns"> <span class="u-pull-left addtitle">Source of Income</span> </div>
+                </div>
+                <div class="row">
+                  <div class="twelve columns">
+                    <table class="u-full-width">
+                      <tbody>
+                        <tr>
+                          <td><span class="input input--haruki celled">
+                            <input class="input__field input__field--haruki" type="number" id="annucompInput" value="200000"/>
+                            <label class="input__label input__label--haruki" for="annucompInput"> <span class="input__label-content input__label-content--haruki">Annual Compensation</span> </label>
+                            </span></td>
+                          <td><section>
+                              <label for="incomesrcInput">Primary Source of Income</label>
+                              <select class="" id="incomesrcInput">
+                                <option value="Compensation" selected>Compensation</option>
+                                <option value="Investment">Investment</option>
+                                <option value="Retirement Assets">Retirement Assets</option>
+                              </select>
+                            </section></td>
+                          <td><label for="fedrateInput">Fed Rate</label>
+                            <select class="" id="fedrateInput">
+                              <option value="10">10%</option>
+                              <option value="15">15%</option>
+                              <option value="20">20%</option>
+                              <option value="25">25%</option>
+                              <option value="30">28%</option>
+                              <option value="35" selected>33%</option>
+                              <option value="40">35%</option>
+                              <option value="45">39.6%</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                          <td><span class="input input--haruki celled">
+                            <input class="input__field input__field--haruki" type="number" id="annutotalInput" value="300000"/>
+                            <label class="input__label input__label--haruki" for="annutotalInput"> <span class="input__label-content input__label-content--haruki">Total Annual Income</span> </label>
+                            </span></td>
+                          <td><span class="input input--haruki celled">
+                            <input class="input__field input__field--haruki" type="number" id="liqnetwrthInput" value="1000000"/>
+                            <label class="input__label input__label--haruki" for="liqnetwrthInput"> <span class="input__label-content input__label-content--haruki">Liquid Net Worth</span> </label>
+                            </span></td>
+                          <td><span class="input input--haruki celled">
+                            <input class="input__field input__field--haruki" type="number" id="totalnetwrthInput" value="2000000"/>
+                            <label class="input__label input__label--haruki" for="totalnetwrthInput"> <span class="input__label-content input__label-content--haruki">Total Net Worth</span> </label>
+                            </span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="twelve columns"> <span class="u-pull-left addtitle">Investing Experience</span> </div>
+                </div>
+                <div class="row">
+                  <div class="twelve columns">
+                    <table class="u-full-width">
+                      <tbody>
+                        <tr>
+                          <td><span class="input input--haruki celled">
+                            <input class="input__field input__field--haruki" type="number" id="eqsinceInput" min="1950" max="2016" value="1998"/>
+                            <label class="input__label input__label--haruki" for="eqsinceInput"> <span class="input__label-content input__label-content--haruki">Equities Since</span> </label>
+                            </span></td>
+                          <td><span class="input input--haruki celled">
+                            <input class="input__field input__field--haruki" type="number" id="fxincmsinceInput" min="1950" max="2016" value="1990"/>
+                            <label class="input__label input__label--haruki" for="fxincmsinceInput"> <span class="input__label-content input__label-content--haruki">Fixed Income Since</span> </label>
+                            </span></td>
+                        </tr>
+                        <tr>
+                          <td><span class="input input--haruki celled">
+                            <input class="input__field input__field--haruki" type="number" id="optnsinceInput" min="1950" max="2016" value="1998"/>
+                            <label class="input__label input__label--haruki" for="optnsinceInput"> <span class="input__label-content input__label-content--haruki">Options Since</span> </label>
+                            </span></td>
+                          <td><span class="input input--haruki celled">
+                            <input class="input__field input__field--haruki" type="number" id="commosinceInput" min="1950" max="2016" value="1998"/>
+                            <label class="input__label input__label--haruki" for="commosinceInput"> <span class="input__label-content input__label-content--haruki">Commodities Since</span> </label>
+                            </span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="twelve columns"> <span class="u-pull-left addtitle">Source of Wealth</span> </div>
+                </div>
+                <div class="row">
+                  <div class="twelve columns">
+                    <ul id="selectable_srcincm">
+                      <li class="ui-state-default ui-selected selectable" id="Compensation">Compensation</li>
+                      <li class="ui-state-default ui-selected selectable" id="BusinessOwnership">Business Ownership</li>
+                      <li class="ui-state-default selectable" id="InheritanceGift">Inheritance/Gift</li>
+                      <li class="ui-state-default selectable" id="SecurityInvestments">Security Investments</li>
+                    </ul>
+                    <div class="u-cf"></div>
+                    <ul id="selectable_srcincm">
+                      <li class="ui-state-default ui-selected selectable" id="RealEstate">Real Estate</li>
+                      <li class="ui-state-default selectable" id="PrivateInvestments">Private Investments</li>
+                      <li class="ui-state-default selectable" id="Other">Other (Specify)</li>
+                      <li class="" id="boxtfholder">
+                        <input class="u-full-width" type="text" placeholder="Specify Other" id="otherSrcIncmInput">
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!--
+                <hr class="sephr">
+                <div class="row">
+                  <div class="twelve columns" id="bottomsubmitbar">
+        <a class="button button-primary u-pull-left tablink left prev" data-index="2" href="javascript:;">Professional Info</a>
+                    <div class="u-pull-right">
+					--> 
+                <!-- <button id="cancelNewAcc">Cancel</button> --> 
+                <!--
+          <button class="button-primary next" id="submitNewEnrollForm">Submit and Create Client</button>
+                    </div>
+                  </div>
+                </div>
+				--> 
+              </div>
+              <!-- end fcontainer --> 
+            </div>
+          </div>
+          <h3>Accounts</h3>
+          <div>
+            <div class="row">
+              <div class="twelve columns">
+                <h5>Account Details</h5>
+              </div>
+            </div>
+            <hr class="sephr">
+            <div id="accountRow">
+              <div class="row">
+                <div class="four columns">
+                  <div class="input input--haruki">
+                    <input class="input__field input__field--haruki accnumInput" type="text" id="accnumInput" value="101-102345"/>
+                    <label class="input__label input__label--haruki" for="input-1"> <span class="input__label-content input__label-content--haruki">Account Number</span> </label>
+                  </div>
+                </div>
+                <div class="four columns">
+                  <label for="actypeInput">Account Type</label>
+                  <select class="actypeInput" id="actypeInput">
+                    <option value="1" selected>Trust</option>
+                    <option value="2">Individual</option>
+                    <option value="3">Retirement</option>
+                    <option value="4">Fund</option>
+                  </select>
+                </div>
+                <div class="four columns">
+                  <label>Beneficiary</label>
+                  <select class="benInput" id="benInput">
+                    <option value="1" selected>Chris Smith</option>
+                    <option value="2">Jane Doe</option>
+                    <option value="3">James Doe</option>
+                    <option value="4">Jim Doe</option>
+                    <option value="5">N/A</option>
+                  </select>
+                </div>
+              </div>
+              <hr/>
+            </div>
+            <div class="row" id="addAcc">
+              <div class="twelve columns">
+                <div class='btnwrapper'>
+                  <button id="addAccount" onclick="addAccount()">+ Associate Another Account</button>
+                </div>
+              </div>
+              <!-- End Column --> 
+            </div>
+            <!-- End Row --> 
+            <!--
+              <hr class="sephr">
+              <div class="row">
+                <div class="twelve columns" id="bottomsubmitbar">
+                  <div class='btnwrapper'>
+                    <div class="u-pull-left" id="txtPartyId"></div>
+                    <div class="u-pull-right" id="bottombuttons">
+					--> 
+            <!-- <button id="cancelNewAcc">Cancel</button> --> 
+            <!--
+                      <button class="button-primary next" id="nextNewAcc">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+--> 
+            
+          </div>
+          <h3>Relations</h3>
+          <div>
+            <div class="nonenrol-tab" id="paper">
+              <div class="row">
+                <div class="twelve columns">
+                  <h5>Relations</h5>
+                </div>
+              </div>
+            </div>
+            <!-- End Row -->
+            <div class="row">
+              <table class="u-full-width">
+                <thead>
+                  <tr>
+                    <th>Party</th>
+                    <th>Relation Type</th>
+                    <th>Bi Directional Relation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Chris Smith</td>
+                    <td><select class="reltypeInput" id="reltypeInput">
+						<option value="lawyer">Brother</option>
+						<option value="lawyer">Business Associate</option>
+						<option value="cpa">CPA</option>
+						<option value="daughter">Daughter</option>
+						<option value="lawyer">Father</option>
+						<option value="lawyer">Father in law</option>
+						<option value="lawyer">Lawyer</option>
+						<option value="lawyer">Mother</option>
+						<option value="lawyer">Mother in law</option>
+						<option value="13">None</option>
+						<option value="lawyer">Sister</option>
+						<option value="son" selected>Son</option>
+						<option value="wife">Spouse</option>
+						<option value="trustee">Trustee</option>
+                      </select></td>
+                    <td><div class="switch">
+                        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" checked type="checkbox">
+                        <label for="cmn-toggle-1"></label>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>Nita Smith</td>
+                    <td><select class="reltypeInput" id="reltypeInput">
+                        <option value="lawyer">Brother</option>
+						<option value="lawyer">Business Associate</option>
+						<option value="cpa">CPA</option>
+						<option value="daughter">Daughter</option>
+						<option value="lawyer">Father</option>
+						<option value="lawyer">Father in law</option>
+						<option value="lawyer">Lawyer</option>
+						<option value="lawyer">Mother</option>
+						<option value="lawyer">Mother in law</option>
+						<option value="13" selected>None</option>
+						<option value="lawyer">Sister</option>
+						<option value="son">Son</option>
+						<option value="wife">Spouse</option>
+						<option value="trustee">Trustee</option>
+                      </select></td>
+                    <td><div class="switch">
+                        <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                        <label for="cmn-toggle-2"></label>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>Andrew Smith</td>
+                    <td><select class="reltypeInput" id="reltypeInput">
+                        <option value="lawyer">Brother</option>
+						<option value="lawyer">Business Associate</option>
+						<option value="cpa">CPA</option>
+						<option value="daughter">Daughter</option>
+						<option value="lawyer">Father</option>
+						<option value="lawyer">Father in law</option>
+						<option value="lawyer">Lawyer</option>
+						<option value="lawyer">Mother</option>
+						<option value="lawyer">Mother in law</option>
+						<option value="13" selected>None</option>
+						<option value="lawyer">Sister</option>
+						<option value="son">Son</option>
+						<option value="wife">Spouse</option>
+						<option value="trustee">Trustee</option>
+                      </select></td>
+                    <td><div class="switch">
+                        <input id="cmn-toggle-3" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                        <label for="cmn-toggle-3"></label>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>Isha Smith</td>
+                    <td><select class="reltypeInput" id="reltypeInput">
+                        <option value="lawyer">Brother</option>
+						<option value="lawyer">Business Associate</option>
+						<option value="cpa">CPA</option>
+						<option value="daughter">Daughter</option>
+						<option value="lawyer">Father</option>
+						<option value="lawyer">Father in law</option>
+						<option value="lawyer">Lawyer</option>
+						<option value="lawyer">Mother</option>
+						<option value="lawyer">Mother in law</option>
+						<option value="13" selected>None</option>
+						<option value="lawyer">Sister</option>
+						<option value="son">Son</option>
+						<option value="wife">Spouse</option>
+						<option value="trustee">Trustee</option>
+                      </select></td>
+                    <td><div class="switch">
+                        <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                        <label for="cmn-toggle-4"></label>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>James Smith</td>
+                    <td><select class="reltypeInput" id="reltypeInput">
+                        <option value="lawyer">Brother</option>
+						<option value="lawyer">Business Associate</option>
+						<option value="cpa">CPA</option>
+						<option value="daughter">Daughter</option>
+						<option value="lawyer">Father</option>
+						<option value="lawyer">Father in law</option>
+						<option value="lawyer">Lawyer</option>
+						<option value="lawyer">Mother</option>
+						<option value="lawyer">Mother in law</option>
+						<option value="13" selected>None</option>
+						<option value="lawyer">Sister</option>
+						<option value="son">Son</option>
+						<option value="wife">Spouse</option>
+						<option value="trustee">Trustee</option>
+                      </select></td>
+                    <td><div class="switch">
+                        <input id="cmn-toggle-5" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                        <label for="cmn-toggle-5"></label>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>Paul Buckler</td>
+                    <td><select class="reltypeInput" id="reltypeInput">
+                        <option value="lawyer">Brother</option>
+						<option value="lawyer">Business Associate</option>
+						<option value="cpa">CPA</option>
+						<option value="daughter">Daughter</option>
+						<option value="lawyer">Father</option>
+						<option value="lawyer">Father in law</option>
+						<option value="lawyer">Lawyer</option>
+						<option value="lawyer">Mother</option>
+						<option value="lawyer">Mother in law</option>
+						<option value="13" selected>None</option>
+						<option value="lawyer">Sister</option>
+						<option value="son">Son</option>
+						<option value="wife">Spouse</option>
+						<option value="trustee">Trustee</option>
+                      </select></td>
+                    <td><div class="switch">
+                        <input id="cmn-toggle-6" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                        <label for="cmn-toggle-6"></label>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>Alex Sun</td>
+                    <td><select class="reltypeInput" id="reltypeInput">
+                       <option value="lawyer">Brother</option>
+						<option value="lawyer">Business Associate</option>
+						<option value="cpa">CPA</option>
+						<option value="daughter">Daughter</option>
+						<option value="lawyer">Father</option>
+						<option value="lawyer">Father in law</option>
+						<option value="lawyer">Lawyer</option>
+						<option value="lawyer">Mother</option>
+						<option value="lawyer">Mother in law</option>
+						<option value="13" selected>None</option>
+						<option value="lawyer">Sister</option>
+						<option value="son">Son</option>
+						<option value="wife">Spouse</option>
+						<option value="trustee">Trustee</option>
+                      </select></td>
+                    <td><div class="switch">
+                        <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                        <label for="cmn-toggle-7"></label>
+                      </div></td>
+                  </tr>
+                  <tr>
+                    <td>Dan Smith</td>
+                    <td><select class="reltypeInput" id="reltypeInput">
+                        <option value="lawyer">Brother</option>
+						<option value="lawyer">Business Associate</option>
+						<option value="cpa">CPA</option>
+						<option value="daughter">Daughter</option>
+						<option value="lawyer">Father</option>
+						<option value="lawyer">Father in law</option>
+						<option value="lawyer">Lawyer</option>
+						<option value="lawyer">Mother</option>
+						<option value="lawyer">Mother in law</option>
+						<option value="13" selected>None</option>
+						<option value="lawyer">Sister</option>
+						<option value="son">Son</option>
+						<option value="wife">Spouse</option>
+						<option value="trustee">Trustee</option>
+                      </select></td>
+                    <td><div class="switch">
+                        <input id="cmn-toggle-8" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                        <label for="cmn-toggle-8"></label>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          
+		  <div class="row">
+			<div class="twelve columns">
+				<button class="locateAddress">Add Party</button>
+			</div>
+		  </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row">
+        <div class="twelve columns" id="bottomsubmitbar">
+          <div class='btnwrapper'>
+            <div class="u-pull-left" id="txtPartyId"></div>
+            <div class="u-pull-right" id="bottombuttons">
+              <button onclick='window.location.href="dashboard.html"' id="cancelNewAcc">Cancel</button>
+              <button class="button-primary" id="submitRelation">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+<script src="js/lib/jquery-ui.js"></script> 
+<script src="js/lib/fancySelect.js"></script> 
+<script src="js/lib/datatables.min.js"></script> 
+<script src="js/classie.js"></script> 
+<script src="js/fa.js"></script> 
+<script src="js/skeleton-tabs.js"></script> 
+<script>
+  $(function() {
+    $( "#accordion" ).accordion({
+      autoHeight: false,
+      heightStyle: "content",
+  		activate: function( event, ui ) {
+
+  		},
+  		create: function( event, ui ) {$("#accordion").css("visibility", "visible")}
+  	});
+
+    $("#radio").buttonset();
+
+    // Adding click events on accordion content buttons to navigate to next and previous accordion.
+    $(".prev , .next").on("click" , function(){
+      if($(this).hasClass('prev')){
+        var active = $("#accordion").accordion("option", "active");
+        $("#accordion").accordion("option", "active", active - 1);
+      }
+      else{
+        var active = $("#accordion").accordion("option", "active");
+        $("#accordion").accordion("option", "active", active + 1);
+      }
+    });
+
+    $("#sameaslglCheckbox").on("change", function() {
+        if (this.checked) {
+            $("#mstr1Input").val($("#str1Input").val());
+            $("#mstr2Input").val($("#str2Input").val());
+            $("#mcityInput").val($("#cityInput").val());
+            $("#mstateInput").val($("#stateInput").val());
+            $("#mzipInput").val($("#zipInput").val());
+            $("#mcountryInput").val($("#countryInput").val());
+            $(".re").parent().addClass("input--filled");
+            if($("#mstr2Input").val()==""){
+              $("#mstr2Input").parent().removeClass("input--filled");
+            }
+            } else {
+              $(".re").val("");
+              $(".re").parent().removeClass("input--filled");
+              }
+      });
+
+      $(".selectable").click(function(e) {
+				$(this).toggleClass("ui-selected selectable");
+				if($(this).attr("id")=="Other"){
+					if($(this).hasClass("selectable")){
+						$("#boxtfholder").hide()
+					}else{
+						$("#boxtfholder").show()
+					}
+
+				}
+			});
+			
+			 $("#submitRelation").click(function() {			
+				if (typeof(Storage) !== "undefined") {
+					localStorage.setItem("filename", "updated-smith-group-sandra.json");
+					setTimeout(function(){
+						window.location.href = "dashboard.html?ug=t";
+					}, 200);
+					// Code for localStorage/sessionStorage.
+				} else {
+					// Sorry! No Web Storage support..
+				}
+            });
+  });
+  </script> 
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

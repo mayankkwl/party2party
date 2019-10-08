@@ -1,39 +1,69 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MultiObjectPOC">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Multi-Object POC</title>
-    <link rel="stylesheet" href="css/all.min.css">
-    <script src="js/all.min.js"></script>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>FA Login</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!--
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!--<link rel="icon" type="image/png" href="images/favicon.png">-->
+
 </head>
+<body class="loginPageBody">
 
-<body>
-    <div layout="column" style="height:100%;" ng-cloak ng-controller="MainController as MainController">
-        <section layout="row" flex>
-            <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-xs')">
-                <md-toolbar class="md-theme-indigo">
-                    <h1 class="md-toolbar-tools">
-                        header
-                    </h1>
-                </md-toolbar>
-                <md-content>
-                    <p hide-md show-gt-md>
-                        <div class="person">
-                            <div ng-repeat="person in MainController.data">
-                                <md-button class="md-raised md-primary" ng-click="MainController.loadData(person)">{{person.name}}</md-button>
-                            </div>
-                        </div>
-                    </p>
-                </md-content>
-            </md-sidenav>
-            <md-content flex layout-padding>
-                <div layout="column" layout-fill layout-align="top center" id="svgCanvas">
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container loginPage">
+		<div class="login">
+        <form autocomplete="false" onsubmit="return false;">	
+			<div class="error login_error">&nbsp;</div>
+			<input class="u-full-width" type="text" placeholder="Username" id="fauserId" autocomplete="false">
+			<input class="u-full-width" type="password" placeholder="Password" id="fapassword" autocomplete="false">
+			<div class="row">
+			<div class="six columns">
+			 <label class="example-send-yourself-copy rememberme">
+				<input type="checkbox">
+				<span class="label-body">Remember Me</span>
+			</label>
+			</div>
+			<div class="six columns">
+			  <input class="button-primary u-pull-right" id="submit" type="submit" value="Login">
+			</div>
+		  </div>
+		</form>
+		</div>
+  </div>
 
-                </div>
-            </md-content>
-        </section>
-    </div>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="js/fa_login.js"></script>
+  <script>
+	$(document).ready(function(){
+		//var maxH = ($(document).height() > 800) ? 800 : screen.height;
+		$(".loginPage").height(795);
+	})
+  </script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
-
 </html>

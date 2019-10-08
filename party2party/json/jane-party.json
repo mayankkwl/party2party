@@ -1,0 +1,128 @@
+{
+	"view": "party",
+	"nodes": [{
+		"id": 1,
+		"name": "Jane Doe",
+		"img": "images/chart-images/65x65/jane.png",
+		"group": 1,
+		"x": 495,
+		"y": 316,
+		"linkDistance": 250,
+		"isParent": true,
+		"accounts": 2,
+		"worth": "3 MM",
+		"isActive": true,
+		"hasChild": true,
+		"details": "jane_doe.json",
+		"relation": {
+			"name": "Self",
+			"type": "self"
+		}
+	}, {
+		"id": 2,
+		"name": "John Doe",
+		"img": "images/chart-images/65x65/john.png",
+		"group": 1,
+		"x": 495,
+		"y": 316,
+		"linkDistance": 250,
+		"accounts": 5,
+		"worth": "8 MM",
+		"details": "john_doe.json",
+		"relation": {
+			"name": "Spouse",
+			"type": "self"
+		}
+	}, {
+		"id": 3,
+		"name": "Jack Lee",
+		"img": "images/chart-images/50x50/party/jacklee.png",
+		"group": 1,
+		"x": 0,
+		"y": 0,
+		"linkDistance": 250,
+		"hasParent": true,
+		"accounts": 8,
+		"worth": "20 MM",
+		"isActive": false,
+		"relation": {
+			"name": "Lawyer",
+			"type": "contact"
+		}
+	}, {
+		"id": 4,
+		"name": "John Snow",
+		"img": "images/chart-images/50x50/party/johnsnow.png",
+		"group": 1,
+		"x": 0,
+		"y": 0,
+		"linkDistance": 250,
+		"hasParent": true,
+		"accounts": 8,
+		"worth": "20 MM",
+		"isActive": false,
+		"relation": {
+			"name": "CPA",
+			"type": "contact"
+		}
+	}, {
+		"id": 5,
+		"name": "Arya Stark",
+		"img": "images/chart-images/50x50/party/aryastark.png",
+		"group": 1,
+		"x": 0,
+		"y": 0,
+		"linkDistance": 250,
+		"hasParent": true,
+		"accounts": 8,
+		"worth": "20 MM",
+		"isActive": false,
+		"relation": {
+			"name": "Trustee",
+			"type": "prospect"
+		}
+	}, {
+		"id": 6,
+		"name": "Ygritte Grace",
+		"img": "images/chart-images/50x50/party/ygritte.png",
+		"group": 1,
+		"x": 0,
+		"y": 0,
+		"linkDistance": 250,
+		"hasParent": true,
+		"accounts": 8,
+		"worth": "20 MM",
+		"isActive": false,
+		"relation": {
+			"name": "Sister",
+			"type": "prospect"
+		}
+	}],
+	"links": [
+		{  
+         "source":0,
+         "target":1,
+         "relation":"client"         
+      },
+	  {  
+         "source":0,
+         "target":2,
+         "relation":"contact"         
+      },
+	  {  
+         "source":0,
+         "target":3,
+         "relation":"contact"         
+      },
+	  {  
+         "source":0,
+         "target":4,
+         "relation":"prospect"         
+      },
+	  {  
+         "source":0,
+         "target":5,
+         "relation":"prospect"         
+      }
+	]
+}

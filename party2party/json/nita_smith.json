@@ -1,0 +1,32 @@
+{
+    "img": "nita_smith.png",
+    "name": "Nita Smith",
+    "designation": "Primary Account Holder",
+    "address": "343 Beach Street, Jersey City, NJ 07307",
+    "tel": "1-732-344-2392",
+    "taxid": "2467539939",
+    "clientType": "Client",
+    "rm": "Matthew Jones",
+    "netVal": "5 MM",
+    "totalAccounts": "2",
+    "totalRetions": "3",
+    "account": [
+        {
+            "a_no": "101-365214",
+            "a_type": "Individual",
+            "beneficiary": "",
+            "netval": "3MM"
+        },
+        {
+            "a_no": "101-521473",
+            "a_type": "Retirement",
+            "beneficiary": "Andrew Smith, Isha Smitih, James Smith",
+            "beneficiaryDialouge": [
+                "Andrew Smith",
+                "Isha Smitih",
+                "James Smith"
+            ],
+            "netval": "2MM"
+        }
+    ]
+}

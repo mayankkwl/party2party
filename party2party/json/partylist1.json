@@ -1,0 +1,175 @@
+{
+	"party": [{
+		"id": 1,
+		"name": "John Doe",
+		"worth": "8",
+		"account": "5 Accounts",
+		"details" : "john_doe.json",
+		"imgPath": "images/chart-images/50x50/party/john.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 2,
+		"name": "Jane Doe",
+		"details" : "jane_doe.json",
+		"worth": "3",
+		"account": "2 Accounts",
+		"imgPath": "images/chart-images/50x50/party/jane.png",
+		"url": "jane-party1.json"
+	}, {
+		"id": 3,
+		"name": "James Doe",
+		"worth": "0",
+		"account": "",
+		"imgPath": "images/chart-images/50x50/party/james.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 9,
+		"name": "Nita Smith",
+		"details" : "nita_smith.json",
+		"worth": "5",
+		"account": "2 Accounts",
+		"imgPath": "images/chart-images/50x50/party/nita.png",
+		"url": "nita-party.json"
+	}, {
+		"id": 4,
+		"name": "Shane Doe",
+		"worth": "0",
+		"account": "",
+		"imgPath": "images/chart-images/50x50/party/shane.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 5,
+		"name": "Alex Sun",
+		"worth": "0",
+		"account": "",
+		"imgPath": "images/chart-images/50x50/party/alex.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 6,
+		"name": "Joe Dan",
+		"worth": "0",
+		"account": "",
+		"imgPath": "images/chart-images/50x50/party/dan.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 7,
+		"name": "Jack Lee",
+		"worth": "0",
+		"account": "",
+		"imgPath": "images/chart-images/50x50/party/jacklee.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 8,
+		"name": "Chris Smith",
+		"worth": "80",
+		"account": "4 Accounts",
+		"imgPath": "images/chart-images/50x50/party/chris.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 10,
+		"name": "Andrew Smith",
+		"worth": "5",
+		"account": "2 Accounts",
+		"imgPath": "images/chart-images/50x50/party/andrew.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 11,
+		"name": "James Smith",
+		"worth": "",
+		"account": "",
+		"imgPath": "images/chart-images/50x50/party/jamess.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 12,
+		"name": "Dan Smith",
+		"worth": "",
+		"account": "",
+		"imgPath": "images/chart-images/50x50/party/dans.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 13,
+		"name": "Isha Smith",
+		"worth": "30",
+		"account": "100 Account",
+		"imgPath": "images/chart-images/50x50/party/isha.png",
+		"url": "doe-party1.json"
+	}, {
+		"id": 14,
+		"name": "Paul Smith",
+		"worth": "",
+		"account": "",
+		"imgPath": "images/chart-images/50x50/party/paul.png",
+		"url": "doe-party1.json"
+	}],
+	"group": [{
+		"id": 1,
+		"name": "MSO ID - Corps",
+		"worth": "90",
+		"account": "8 Accounts",
+		"groupName": "MC",
+		"url": "smith-group1.json"
+	}, {
+		"id": 2,
+		"name": "MSO ID - IRAs",
+		"worth": "600",
+		"account": "40 Accounts",
+		"groupName": "MI",
+		"url": "smith-group1.json"
+	}, {
+		"id": 3,
+		"name": "MSO ID - Trust",
+		"worth": "856",
+		"account": "53 Accounts",
+		"groupName": "MT",
+		"url": "smith-group1.json"
+	}, {
+		"id": 4,
+		"name": "Apple Portfolio",
+		"worth": "330",
+		"account": "23 Accounts",
+		"groupName": "AP",
+		"url": "smith-group1.json"
+	}, {
+		"id": 5,
+		"name": "Familial Group",
+		"worth": "240",
+		"account": "33 Accounts",
+		"groupName": "FG",
+		"url": "smith-group1.json"
+	}, {
+		"id": 6,
+		"name": "Professional Gr...",
+		"worth": "199",
+		"account": "14 Accounts",
+		"groupName": "PG",
+		"url": "smith-group1.json"
+	}, {
+		"id": 7,
+		"name": "Clark Group",
+		"worth": "300",
+		"account": "20 Accounts",
+		"groupName": "CG",
+		"url": "smith-group1.json"
+	}, {
+		"id": 8,
+		"name": "DLJ Group",
+		"worth": "243",
+		"account": "11 Accounts",
+		"groupName": "DG",
+		"url": "smith-group1.json"
+	}, {
+		"id": 9,
+		"name": "Tanscon Group",
+		"worth": "123",
+		"account": "10 Accounts",
+		"groupName": "TG",
+		"url": "smith-group1.json"
+	}, {
+		"id": 10,
+		"name": "Track Group",
+		"worth": "99",
+		"account": "12 Accounts",
+		"groupName": "TG",
+		"url": "smith-group1.json"
+	}]
+}

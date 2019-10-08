@@ -1,0 +1,377 @@
+/* Tabbed Panel */
+body{
+	font-family:Open Sans;
+	font-size:13px;
+}
+
+* {
+    /*outline: 1px solid red;*/
+}
+
+.right-pane{
+	float:left;
+}
+
+inpot {
+    border: none;
+}
+
+.right-background {
+    background-color: #ddd;
+}
+
+.tab-content{
+    background-color: #ddd;
+}
+
+.nonenrol-tab {
+    margin: 10px;
+    background-color: #fff;
+	padding:20px;
+}
+
+.tab-pane{
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10%;
+}
+
+.tab-pane.active {
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #bbb;
+    border-width: 0px 1px 1px 1px;
+	border:none;
+}
+
+ul.tab-nav {
+    padding-left: 0; 
+}
+
+.sephr{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    visibility: hidden;
+}
+
+.frmcontainer{
+	width: 80% !important;
+}
+
+.widecontainer {
+    width: 100% !important;
+}
+
+/*
+	.container-outer{
+	width:1280px;
+}
+*/
+.container{
+	background-color: #ddd;
+}
+.container-full-width{
+	padding:20px;
+}
+
+.genderradio{
+	display:inline;
+	font-weight: 200;
+	margin-right: 10px;
+}
+
+.tablink{
+	font-size:12px;
+	color:#222;
+}
+
+.locatelink{
+
+}
+
+#txtPartyId{
+	font-weight:600;
+	font-size:12px;
+	margin-top: 20px;
+}
+
+#bottombuttons{
+	margin-top: 12px;
+}
+
+#bottomsubmitbar{
+
+}
+#menulist{
+	padding:20px 0;	
+	font-size:100%;
+	margin:0px;
+	font-size:14px;
+	color:#fff;
+}
+#menulist ul{
+	padding:0px;
+	color:#fff;
+	margin:0 0 -10px 0;
+	font-size:16px;
+}
+
+#menulist li a{
+	color:#fff;
+	margin-left:20px;
+}
+#menulist>li:nth-child(2){
+	padding-top:0px;
+}
+#menulist li{
+	padding:10px 0;
+	border-bottom:1px solid #2d3647;
+	margin:0;
+	line-height:26px;
+}
+#menulist ul li{
+    padding-left: 15px;	
+}
+#menulist ul li:last-child{
+    border-bottom: none;
+}
+.lhsNavi a{
+	color:#71798a;
+	text-decoration:none;
+}
+#menulist .listactive{
+	color:#7ad2fb;
+	background-color:#283445;
+	margin-bottom:-1px;
+	position:relative;
+}
+#menulist .listactive a{	
+	color:#7ad2fb;
+}
+#menulist .listactive:before{
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-left: 2px solid #56d4ff !important;
+    content: '';
+    top: -1px;
+    left: 0;
+    height: 47px;
+}
+#menulist .listactive.oactive{	
+	padding:10px 0 10px 25px;
+}
+
+.lhsNavi {
+	color:#71798a;
+}
+.lhsNavi span{
+	height:23px;
+	width:25px;
+	padding-top:2px;
+	display:inline-block;
+	margin:5px;
+	background-color:#71798a;
+	color:#000;
+	text-align:center;
+	border-radius:25px;
+}
+.listactive span{
+	background-color:#fff;
+}
+
+.addtitle{
+    font-size: 1.2em;
+}
+
+.tabcurrency{
+	display: inline;
+}
+
+.colmtitle{
+	width:27%;
+}
+
+.u-85-width{
+	width: 85%;
+    box-sizing: border-box;
+}
+
+.u-90-width{
+	width: 90%;
+    box-sizing: border-box;
+}
+
+#rightsideContent{
+	background-color:#ddd;
+	color:#222b3d;
+}
+
+.fieldwrapper{
+	padding: 5%;
+}
+
+.btnwrapper{
+	padding-left:1.5%;
+	padding-top:1%;
+	padding-bottom:1%;
+	padding-right: 1%;
+	text-align:center;
+}
+
+.bordercontainer{
+	box-sizing: border-box;
+    border-style: solid;
+    border-color: #bbb;
+    border-width: 0px 1px 1px 1px;
+	border:none;
+	background-color:#ddd;
+}
+
+/* Circle Number Oredered List */
+
+
+/* Selectable Boxes */
+#selectable_srcincm .ui-selecting { background: #FECA40; }
+#selectable_srcincm .ui-selected { background: #F39814; color: white; }
+#selectable_srcincm { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+#selectable_srcincm li { margin: 3px; padding: 1px; float: left; width: 220px; height: 50px; text-align: center; line-height: 50px; }
+
+#boxtfholder {
+	display:none;
+}
+	
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+	.container-outer{
+		width:1024px;
+	}
+	.right-pane{
+		width:809px !important;
+	}
+}
+
+h5{
+	font-size:18px;
+	border-bottom:1px solid #e4edf1;
+	font-weight:normal;
+}
+
+#radio {
+
+}
+#radio .ui-state-active{
+	background-color:#0aa3e9;
+	color:#fff;
+	border:1px solid #0aa3e9;
+}
+#radio .ui-state-default i{
+	display:inline-block;
+	height:10px;
+	width:10px;
+	background-color:#fff;
+	border:1px solid #d1d4d5;
+	border-radius:10px;
+	margin-right:10px;
+}
+#radio .ui-state-active i{
+	display:inline-block;
+	height:10px;
+	width:10px;
+	background-color:#2de32d;
+	border:1px solid #ffffff;
+	border-radius:10px;
+	margin-right:10px;
+}
+#radio .ui-state-hover{
+	background-color:#0aa3e9;
+	color:#fff;
+	border:1px solid #0aa3e9;
+}
+#radio .ui-state-hover i{	
+	border:1px solid #2de32d;
+	background-color:#2de32d;
+}
+.right-pane .button-primary{
+	background-color:#3d95d5;
+	border-radius:25px;
+	padding-right:15px;
+	text-transform:capitalize;
+	font-size:16px;
+	font-weight:lighter;
+}
+.right-pane .button-primary:after{
+    content: '>';
+	padding-left:10px;
+}
+
+.right-pane .button-primary.left:after{
+    content: '';
+}
+.right-pane .button-primary.left:before{
+    content: '<';
+	padding-right:10px;
+	margin-left:-10px;
+}
+#cancelNewAcc{
+	border-radius:25px;
+}
+.empstatus section{
+	
+}
+table tr td{
+	border-bottom:none;	
+}
+select{
+	width:96%	
+}
+.dashboard label{
+	color:#147cac;
+}
+.ui-widget-content{
+    background: #fff;
+    width: 98.5%;
+    margin: 0 auto;
+    border-radius: 15px;
+    height: .75em;
+    margin-top: -10px;
+}
+.ui-progressbar .ui-progressbar-value{
+	background: #33C3F0;
+}
+.locateAddress{
+	background-color: #0FA0CE;
+    color: #fff;
+    padding: 5px 15px;
+    height: auto;
+    line-height: normal;
+    font-size: 10px;	
+}
+.locateAddress:hover{
+	color:#fff;	
+}
+#otherSrcIncmInput{
+	padding:25px;
+}
+.bidirel {
+	text-align:center;
+}
+.bidirel span{
+	color:#147cac;
+	font-weight:bold;
+}
+
+.bidirel label{
+	margin:2px auto;
+}

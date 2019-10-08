@@ -1,0 +1,41 @@
+/*CSS for serving the retina image to devices with a high "device-pixel-ratio":*/
+@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {
+
+	.dashboard .logo a{
+		width: 159px;
+		height: 24px;
+		background-image: url("../images/MorganStanley-Logo@2x.png");
+		display: block;
+		text-indent: -9999px;
+		margin: 9px auto;
+		background-size: 100% 100%;
+	}
+	
+	.container{
+		width:100%;
+	}
+	
+	.right-pane{
+		width:809px;
+	}
+	.partyContainer .userDetail{
+		width:526px;
+	}
+	
+	.userinfo1 .userinfodetail{
+		width: 77%;
+	}
+	
+	.graphContainer svg{
+	  top:-10px;
+	  left:0px;
+	}
+	
+	.partyContainer .userDetailGroup{
+		left:-572px;
+	}
+	
+	#selectable_srcincm li{
+		width:165px
+	}
+}

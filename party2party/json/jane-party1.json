@@ -1,0 +1,63 @@
+{
+	"view": "party",
+	"nodes": [{
+		"id": 1,
+		"name": "Jane Doe",
+		"img": "images/chart-images/65x65/jane.png",
+		"group": 1,
+		"x": 495,
+		"y": 316,
+		"linkDistance": 250,
+		"isParent": true,
+		"accounts": 2,
+		"worth": "3 MM",
+		"isActive": true,
+		"hasChild": true,
+		"details": "jane_doe.json",
+		"relation": {
+			"name": "Self",
+			"type": "self"
+		}
+	}, {
+		"id": 2,
+		"name": "John Doe",
+		"img": "images/chart-images/65x65/john.png",
+		"group": 1,
+		"x": 495,
+		"y": 316,
+		"linkDistance": 250,
+		"accounts": 5,
+		"worth": "8 MM",
+		"details": "john_doe.json",
+		"relation": {
+			"name": "Spouse",
+			"type": "self"
+		}
+	},
+	{
+		"id": 3,
+		"name": "Ygritte Grace",
+		"img": "images/chart-images/50x50/party/ygritte.png",
+		"group": 1,
+		"x": 0,
+		"y": 0,
+		"linkDistance": 250,
+		"hasParent": true,
+		"accounts": 8,
+		"worth": "20 MM",
+		"isActive": false,
+		"relation": {
+			"name": "Sister",
+			"type": "prospect"
+		}
+	}],
+	"links": [{
+		"source": 0,
+		"target": 1,
+		"relation": "client"
+	},{
+		"source": 0,
+		"target": 2,
+		"relation": "prospect"
+	}]
+}

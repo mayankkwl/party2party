@@ -1,0 +1,41 @@
+[{
+	"name": "James Smith",
+	"worth": "30 MM",
+	"account": "100 Account",
+	"imgPath": "images/james.png"
+}, {
+	"name": "Chris Smith",
+	"worth": "80 MM",
+	"account": "100 Account",
+	"imgPath": "images/james.png"
+}, {
+	"name": "Nita Smith",
+	"worth": "5 MM",
+	"account": "100 Account",
+	"imgPath": "images/james.png"
+}, {
+	"name": "Andrew Smith",
+	"worth": "30 M",
+	"account": "100 Account",
+	"imgPath": "images/james.png"
+}, {
+	"name": "Isha Smith",
+	"worth": "30 M",
+	"account": "100 Account",
+	"imgPath": "images/james.png"
+}, {
+	"name": "Paul Buckler",
+	"worth": "30 M",
+	"account": "100 Account",
+	"imgPath": "images/james.png"
+}, {
+	"name": "Daren Smith",
+	"worth": "30 M",
+	"account": "100 Account",
+	"imgPath": "images/james.png"
+}, {
+	"name": "Alex Sun",
+	"worth": "30 M",
+	"account": "100 Account",
+	"imgPath": "images/james.png"
+}]
